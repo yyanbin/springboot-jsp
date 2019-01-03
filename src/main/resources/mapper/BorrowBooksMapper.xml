@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.book.dao.BorrowBooksDao" >
+    <insert id="insert" parameterType="com.book.entity.BorrowBooksEntity">
+      insert into y_borrow_books(id,createTime,bookName,num,startTime,endTime)
+      values(#{id},#{createTime},#{bookName},#{num},#{startTime},#{endTime}
+    </insert>
+
+    <select id="selectAll" resultType="com.book.entity.BorrowBooksEntity">
+        select * from y_borrow_books limit #{page},#{rows}
+    </select>
+
+    <select id="selectAllCount" resultType="java.lang.Integer">
+        select count(*) from y_borrow_books
+    </select>
+</mapper>
